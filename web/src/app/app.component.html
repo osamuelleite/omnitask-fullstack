@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>OmniTask Manager</h1>
+
+  <div class="card-list">
+    @for (task of tasks; track $index) {
+    <div class="card" [class.completed]="task.completed">
+      <h3>{{ task.title }}</h3>
+      <p>{{ task.description }}</p>
+      <span class="status">
+        {{ task.completed ? 'Concluída' : 'Pendente' }}
+      </span>
+    </div>
+    } @empty {
+    <p>Nenhuma tarefa encontrada.</p>
+    }
+  </div>
+</div>
